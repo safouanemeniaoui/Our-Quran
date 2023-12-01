@@ -1,0 +1,18 @@
+@use "../helper/mixin" as *;
+
+.radio-content {
+  .radio-list {
+    @include breakPoints(mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    }
+    @include breakPoints(small) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    }
+    @include breakPoints(medium) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    }
+    @include breakPoints(large) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    }
+  }
+}

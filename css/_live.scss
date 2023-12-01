@@ -1,0 +1,30 @@
+@use "../helper/variables" as *;
+@use "../helper/mixin" as *;
+
+.container {
+  > p {
+    text-align: right;
+    @include breakPoints(mobile) {
+      text-align: center;
+    }
+  }
+  .tv-content {
+    background-color: $bg-color;
+    padding: 20px;
+    iframe {
+      width: 100%;
+      @include breakPoints(mobile) {
+        height: 250px;
+      }
+      @include breakPoints(small) {
+        height: 500px;
+      }
+      @include breakPoints(medium) {
+        height: 500px;
+      }
+      @include breakPoints(large) {
+        height: 500px;
+      }
+    }
+  }
+}

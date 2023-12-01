@@ -1,0 +1,115 @@
+@use "../helper/variables" as *;
+@use "../helper/mixin" as *;
+
+.container {
+  > p {
+    color: white;
+    word-spacing: 4px;
+    padding: 20px 20px;
+    background-color: $bg-color;
+    border: 1px solid $main-color;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 60px;
+    span {
+      color: $alt-color;
+    }
+  }
+  .riwaya-list,
+  .tv-list {
+    color: white;
+    list-style: none;
+    @include flex-cc(row, 0);
+    justify-content: start;
+    li {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: $links-color;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      &.active {
+        background-color: $main-color;
+      }
+    }
+  }
+  .riwaya-content {
+    background-color: $bg-color;
+    padding: 20px;
+    .description {
+      background-color: $links-color;
+      width: fit-content;
+      color: $main-color;
+      margin: 20px auto 30px;
+      padding: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      p {
+        color: white;
+      }
+    }
+    audio {
+      width: 50%;
+      @include breakPoints(mobile) {
+        width: 100%;
+      }
+      &::-webkit-media-controls-panel {
+        background-color: $main-color;
+      }
+    }
+    .surah-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      > span {
+        @include flex-g(space-between);
+
+        text-decoration: none;
+        background-color: $links-color;
+        border-radius: 10px;
+        color: white;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: $main-color;
+        }
+        > span,
+        div {
+          height: 100%;
+          padding: 10px 10px 0;
+        }
+        div {
+          span {
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            &.listen-icon:hover {
+              color: #ffc107;
+            }
+            &.listen-icon:hover::after {
+              @include toolTip("إستماع");
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            span {
+              position: relative;
+              &:hover {
+                color: #ffc107;
+              }
+              &:hover::after {
+                @include toolTip("تحميل");
+              }
+            }
+          }
+        }
+        > span:first-of-type {
+          background-color: $main-color;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }
+}

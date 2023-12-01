@@ -1,0 +1,14 @@
+{
+  "livetv": [
+    {
+      "id": 3,
+      "name": "Chaîne du Coran",
+      "url": "http://www.youtube.com/embed/PEmRPDJ9I8M?autoplay=1"
+    },
+    {
+      "id": 4,
+      "name": "Chaîne de la sunna",
+      "url": "http://www.youtube.com/embed/EB0Y1ztWnic?autoplay=1"
+    }
+  ]
+}

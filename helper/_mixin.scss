@@ -1,0 +1,56 @@
+@mixin boxSizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin init {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin breakPoints($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-cc($d, $gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: if($d == column, column, row);
+  gap: $gap;
+}
+
+@mixin flex-g($js) {
+  display: flex;
+  justify-content: $js;
+  align-items: center;
+}
+
+@mixin toolTip($text) {
+  content: $text;
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+}

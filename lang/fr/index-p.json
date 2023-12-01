@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "index": "le Coran",
+    "live": "en direct",
+    "radio": "radio",
+    "footer": "contacte"
+  },
+  "reciters": {
+    "reciterText": "liste des récitants"
+  },
+  "filter": {
+    "all": "tout",
+    "a": "a",
+    "b": "b",
+    "d": "d",
+    "e": "e",
+    "f": "f",
+    "h": "h",
+    "i": "i",
+    "j": "j",
+    "k": "k",
+    "l": "l",
+    "m": "m",
+    "n": "n",
+    "o": "o",
+    "p": "p",
+    "r": "r",
+    "s": "s",
+    "t": "t",
+    "u": "u",
+    "w": "w",
+    "y": "y",
+    "z": "z"
+  }
+}

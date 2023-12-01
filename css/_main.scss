@@ -1,0 +1,309 @@
+@use "../helper/mixin" as *;
+@use "../helper/variables" as *;
+
+.landing {
+  @include flex-cc(row, 0);
+  min-height: 550px;
+  @include breakPoints(mobile) {
+    min-height: 400px;
+  }
+  .container {
+    @include flex-cc(column, 0);
+
+    .logo {
+      position: relative;
+      img {
+        width: 250px;
+        margin-bottom: 40px;
+        @include breakPoints(mobile) {
+          width: 150px;
+        }
+        &.rotate {
+          animation: rotate 14s linear infinite;
+        }
+        &.coran {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    nav {
+      padding: 13px;
+      position: relative;
+      height: 58px;
+      text-align: center;
+      @include breakPoints(mobile) {
+        width: 200px;
+      }
+      border: {
+        top : {
+          style: solid;
+          width: 2px;
+          color: $main-color;
+        }
+        bottom : {
+          style: solid;
+          width: 2px;
+          color: $main-color;
+        }
+      }
+      &::before {
+        content: url(../images/nav-before.png);
+        position: absolute;
+        top: -3px;
+        right: -28px;
+      }
+      &::after {
+        content: url(../images/nav-before.png);
+        position: absolute;
+        top: -15px;
+        left: -28px;
+        transform: rotate(180deg);
+      }
+      ul {
+        list-style: none;
+        @include flex-cc(row, 30px);
+        @include breakPoints(mobile) {
+          padding: {
+            top: 10px;
+            bottom: 10px;
+          }
+          flex-direction: column;
+          position: absolute;
+          width: 100%;
+          left: 50%;
+          top: 57px;
+          transform: translateX(-50%);
+          background-color: $main-color;
+          border-bottom-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+          transition: clip-path 0.5s;
+          z-index: 100;
+          &.show {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          }
+        }
+        li {
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 13px 15px;
+            &:hover {
+              color: $alt-color;
+            }
+          }
+        }
+      }
+      span {
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        @include breakPoints(mobile) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.reciters {
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+  h2 {
+    color: white;
+    position: relative;
+    width: fit-content;
+    padding: 5px 10px;
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: 40px;
+    }
+    &::before {
+      content: url(../images/title-before.png);
+      position: absolute;
+      top: 55%;
+      right: -130px;
+      transform: translateY(-50%);
+      @include breakPoints(mobile) {
+        display: none;
+      }
+    }
+    &::after {
+      content: url(../images/title-after.png);
+      position: absolute;
+      top: 55%;
+      left: -130px;
+      transform: translateY(-50%);
+      @include breakPoints(mobile) {
+        display: none;
+      }
+    }
+  }
+  .reciters-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 50px 10px;
+    &.main {
+      background-color: $bg-color;
+    }
+    a {
+      text-decoration: none;
+      background-color: $links-color;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: white;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+  .filter {
+    @include flex-g(start);
+
+    background-color: white;
+    overflow: hidden;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    @include breakPoints(mobile) {
+      flex-wrap: wrap;
+    }
+    button {
+      border: none;
+      padding: 10px 10px 5px;
+      cursor: pointer;
+      font-family: "Ruwudu", serif;
+      width: 100%;
+      background-color: white;
+      font-size: 16px;
+      &:hover {
+        background-color: $alt-color;
+        color: white;
+      }
+      &:not(:last-of-type) {
+        border-left: 1px solid #cfcfcf;
+      }
+      @include breakPoints(mobile) {
+        width: 50px;
+        &:not(:last-of-type) {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $links-color;
+  padding-top: 50px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+    .footer-info {
+      h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: white;
+        @include breakPoints(mobile) {
+          text-align: center;
+        }
+      }
+      p {
+        line-height: 1.8;
+        word-spacing: 3px;
+        margin-top: 20px;
+        color: #b9b9b9;
+        @include breakPoints(mobile) {
+          text-align: center;
+        }
+        a {
+          text-decoration: none;
+          font-size: 18px;
+          text-transform: uppercase;
+          color: $main-color;
+          font-weight: bold;
+        }
+      }
+    }
+    .important-link {
+      div {
+        a {
+          @include flex-g(flex-start);
+          @include breakPoints(mobile) {
+            margin-right: 35%;
+          }
+          padding: 10px 0;
+          text-decoration: none;
+          text-transform: capitalize;
+          color: #b9b9b9;
+          transition: 0.3s;
+          &:hover {
+            transform: translateX(-10px);
+            color: $main-color;
+          }
+          span {
+            color: $main-color;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .address {
+      > div {
+        @include flex-g(flex-start);
+        @include breakPoints(mobile) {
+          flex-direction: column;
+          gap: 10px;
+        }
+        color: #b9b9b9;
+        padding: 20px;
+        span {
+          margin-left: 20px;
+          color: $main-color;
+          font-size: 20px;
+          @include breakPoints(mobile) {
+            margin-left: 0;
+            font-size: 30px;
+          }
+        }
+        p {
+          text-transform: capitalize;
+          @include breakPoints(mobile) {
+            text-align: center;
+          }
+        }
+        div {
+          p:first-of-type {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  .designer {
+    color: white;
+    padding: 25px;
+    text-align: center;
+    text-transform: capitalize;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    word-spacing: 5px;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

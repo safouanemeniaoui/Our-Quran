@@ -1,0 +1,95 @@
+body {
+  font-family: "Exo 2", sans-serif;
+  direction: ltr;
+}
+
+.landing .container nav a {
+  text-transform: capitalize;
+}
+.landing .container nav::after {
+  top: -7px;
+}
+
+.reciters h2 {
+  text-transform: capitalize;
+}
+.reciters .filter button {
+  font-family: "Exo 2", sans-serif;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.reciters .filter button:not(:last-of-type) {
+  border-right: 1px solid #cfcfcf;
+  border-left: none;
+}
+@media (max-width: 767px) {
+  .reciters .filter button:not(:last-of-type) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 767px) {
+  footer .container .important-link div a {
+    margin-left: 20%;
+    margin-right: 0;
+  }
+}
+footer .container .important-link div a:hover {
+  transform: translateX(10px);
+}
+footer .container .important-link div a span {
+  margin-right: 10px;
+}
+footer .container .address > div span {
+  margin-right: 20px;
+}
+footer .designer {
+  text-transform: uppercase;
+}
+
+.container > p {
+  text-align: left;
+}
+.container .riwaya-content .surah-list {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+@media (max-width: 767px) {
+  .container .riwaya-content .surah-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+.container .riwaya-content .surah-list > span > span:first-of-type {
+  width: 70px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.container .riwaya-content .surah-list > span > span,
+.container .riwaya-content .surah-list > span div {
+  padding: 10px;
+}
+.container .riwaya-content .surah-list > span div span.listen-icon:hover::after {
+  content: "";
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  background-color: transparent;
+}
+.container .riwaya-content .surah-list > span div a span:hover::after {
+  content: "";
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  background-color: transparent;
+}/*# sourceMappingURL=lang.css.map */

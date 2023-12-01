@@ -1,0 +1,114 @@
+@use "../helper/mixin" as *;
+@use "../helper/variables" as *;
+
+body {
+  font-family: "Exo 2", sans-serif;
+  direction: ltr;
+}
+
+.landing {
+  .container {
+    nav {
+      a {
+        text-transform: capitalize;
+      }
+      &::after {
+        top: -7px;
+      }
+    }
+  }
+}
+.reciters {
+  h2 {
+    text-transform: capitalize;
+  }
+  .filter {
+    button {
+      font-family: "Exo 2", sans-serif;
+      text-transform: uppercase;
+      padding: 10px;
+      &:not(:last-of-type) {
+        border-right: 1px solid #cfcfcf;
+        border-left: none;
+      }
+      @include breakPoints(mobile) {
+        &:not(:last-of-type) {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+footer {
+  .container {
+    .important-link {
+      div {
+        a {
+          @include breakPoints(mobile) {
+            margin-left: 20%;
+            margin-right: 0;
+          }
+          &:hover {
+            transform: translateX(10px);
+          }
+          span {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .address {
+      > div {
+        span {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .designer {
+    text-transform: uppercase;
+  }
+}
+.container {
+  > p {
+    text-align: left;
+  }
+  .riwaya-content {
+    .surah-list {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      @include breakPoints(mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      > span {
+        > span:first-of-type {
+          width: 70px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        > span,
+        div {
+          padding: 10px;
+        }
+        div {
+          span {
+            &.listen-icon:hover::after {
+              @include toolTip("");
+              background-color: transparent;
+            }
+          }
+
+          a {
+            span {
+              &:hover::after {
+                @include toolTip("");
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

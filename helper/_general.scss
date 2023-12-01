@@ -1,0 +1,67 @@
+@use "./mixin" as *;
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Ruwudu:wght@400;500;600;700&display=swap");
+* {
+  @include boxSizing;
+  @include init;
+}
+
+body {
+  background: #07202f url(../images/pattern.png);
+  background-size: cover;
+  font-family: "Ruwudu", serif;
+  direction: rtl;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin : {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  @include breakPoints(mobile) {
+    width: 100%;
+  }
+  @include breakPoints(small) {
+    width: 750px;
+  }
+  @include breakPoints(medium) {
+    width: 970px;
+  }
+  @include breakPoints(large) {
+    width: 1170px;
+  }
+}
+
+.lang {
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  span {
+    &:not(:first-of-type) {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+    @include flex-g(center);
+    color: white;
+    text-transform: capitalize;
+    width: 40px;
+    height: 40px;
+    background-color: $main-color;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    &.active {
+      background-color: $alt-color;
+      color: black;
+      opacity: 1;
+    }
+  }
+}
