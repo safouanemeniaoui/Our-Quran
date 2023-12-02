@@ -1,11 +1,5 @@
-let menuIcon = document.querySelector(".menu-icon");
-let menu = document.querySelector("nav ul");
 let recitersList = document.querySelector(".reciters-list");
 let lang = sessionStorage.getItem("currentLang");
-
-menuIcon.addEventListener("click", () => {
-  menu.classList.toggle("show");
-});
 
 async function getReciters() {
   let myData = await fetch(`json/${lang}/reciters.json`);

@@ -47,6 +47,13 @@ async function landingMenu() {
 
 landingMenu();
 
+let menuIcon = document.querySelector(".menu-icon");
+let menu = document.querySelector("nav ul");
+
+menuIcon.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+
 //---------- Footer set -------------//
 
 let fooInfoTitle = document.querySelector(".footer-info h2");
