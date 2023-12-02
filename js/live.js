@@ -11,6 +11,7 @@ async function getLiveTv() {
   });
   let tvListLi = document.querySelectorAll(".tv-list li");
   tvListLi[0].classList.add("active");
+  video.src = tvListLi[0].dataset.url;
   tvListLi.forEach((e) => {
     e.addEventListener("click", () => {
       setClass(tvListLi, e, "active");
